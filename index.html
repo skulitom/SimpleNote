@@ -5,14 +5,13 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Simple Note</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
-
+    <form>
+      <label for="noteTextBox"></label><input type="text" id="noteTextBox" name="noteTextBox" autofocus>
+    </form>
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
   </body>
