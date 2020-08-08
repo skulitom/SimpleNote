@@ -5,6 +5,10 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const appHeight = 50;
 
+electron.ipcMain.on('QUIT_APPLICATION', (event, args) => {
+  app.quit();
+});
+
 function createWindow () {
   // Create the browser window.
   let screenSize = electron.screen.getPrimaryDisplay().size;
