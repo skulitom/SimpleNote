@@ -6,7 +6,19 @@
 // process.
 
 const { ipcRenderer } = require('electron');
+const openExplorer = require('open-file-explorer');
 
 quitApplication = () => {
     ipcRenderer.send('QUIT_APPLICATION', 'quiting')
+};
+
+openFile = () => {
+    openExplorer('', err => {
+        if(err) {
+            console.log(err);
+        }
+        else {
+            //Do Something
+        }
+    });
 };
