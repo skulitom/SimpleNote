@@ -1,14 +1,15 @@
 document.addEventListener('keyup', (e) => {
-    if (e.keyCode == 27) {
+    if (e.keyCode === 27) {
         quitApplication();
-    } else if(e.keyCode == 112) {
+    } else if(e.keyCode === 112) {
         openFile();
     }
 });
 
 document.querySelector("#mainForm").addEventListener("submit", function(e){
-    if(e.target.value) {
-
+    const val = document.getElementById("noteTextBox").value;
+    if(val) {
+        writeToFile(val);
     } else {
         e.preventDefault();
     }
