@@ -1,28 +1,28 @@
-# electron-quick-start
+# SimpleNote App
 
-**Clone and run for a quick way to see Electron in action.**
+**Clone and run to multiply your productivity and effectiveness**
 
-This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start) within the Electron documentation.
+SimpleNote was made with a busy person in mind. Do you identify with?:
 
-**Use this app along with the [Electron API Demos](https://electronjs.org/#get-started) app for API code examples to help you get started.**
+- Tired of switching tabs to take notes
+- Cannot take notes whilst reading
+- Note taking takes too much effort
+- Tired of complexity
 
-A basic Electron application needs just these files:
-
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
-
-You can learn more about each of these components within the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start).
+SimpleNote allows you to make quick short notes at any time with a shortcut and a few keystrokes.
+SimpleNote blocks the minimal amount of screen possible so that it does not obstruct your reading and attention. Remain focused on the task at hand and make quick simple notes.
 
 ## To Use
+
+SimpleNote runs on Windows, Mac and Linux
 
 To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
-git clone https://github.com/electron/electron-quick-start
+git clone https://github.com/skulitom/SimpleNote.git
 # Go into the repository
-cd electron-quick-start
+cd SimpleNote
 # Install dependencies
 npm install
 # Run the app
@@ -31,15 +31,4 @@ npm start
 
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
-## Resources for Learning Electron
-
-- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
-- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
-- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
-- [electron/simple-samples](https://github.com/electron/simple-samples) - small applications with ideas for taking them further
-- [electron/electron-api-demos](https://github.com/electron/electron-api-demos) - an Electron app that teaches you how to use Electron
-- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
-
-## License
-
-[CC0 1.0 (Public Domain)](LICENSE.md)
+To launch a SimpleNote screen press ctrl+1 (on Mac: cmnd+1) on your keyboard from anywhere you like. Make a note and press enter, a new text file with your note will appear.
