@@ -6,7 +6,7 @@ const path = require('path');
 const appHeight = 50;
 
 electron.ipcMain.on('QUIT_APPLICATION', (event, args) => {
-  app.quit();
+  BrowserWindow.getFocusedWindow().close();
 });
 
 function createWindow () {
