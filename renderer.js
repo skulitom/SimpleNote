@@ -17,7 +17,7 @@ checkForFile = (fileName,callback) => {
     if(fs.existsSync(fileName)) {
         callback();
     } else {
-        fs.writeFile(fileName, {flag: 'rwx'}, (err, data) => {
+        fs.writeFile(fileName, '', (err, data) => {
             callback();
         })
     }

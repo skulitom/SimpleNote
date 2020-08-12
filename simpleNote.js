@@ -8,6 +8,7 @@ document.addEventListener('keyup', (e) => {
 
 document.querySelector("#mainForm").addEventListener("submit", function(e){
     const val = document.getElementById("noteTextBox").value;
+    console.log(typeof val);
     if(val) {
         writeToFile(val);
     } else {
