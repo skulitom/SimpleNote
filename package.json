@@ -18,8 +18,5 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^9.1.2"
-  },
-  "dependencies": {
-    "open-file-explorer": "^1.0.2"
   }
 }

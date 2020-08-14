@@ -5,12 +5,15 @@
 // selectively enable features needed in the rendering
 // process.
 
-const { ipcRenderer } = require('electron');
-const openExplorer = require('open-file-explorer');
+const { remote, ipcRenderer } = require('electron');
 fs = require('fs');
 
 quitApplication = () => {
     ipcRenderer.send('QUIT_APPLICATION', 'quiting')
+};
+
+openFile = () => {
+    ipcRenderer.send('OPEN_FILE', 'opening')
 };
 
 checkForFile = (fileName,callback) => {
@@ -24,23 +27,12 @@ checkForFile = (fileName,callback) => {
 };
 
 writeToFile = (text) => {
-    checkForFile("myNote.txt",() => {
-        fs.appendFile("myNote.txt", text+'\r\n', (err,data) => {
+    checkForFile(remote.getGlobal('simpleFile'),() => {
+        fs.appendFile(remote.getGlobal('simpleFile'), text+'\r\n\r\n', (err,data) => {
             if (err) {
                 return console.log(err);
             }
             console.log(data);
         });
-    });
-};
-
-openFile = () => {
-    openExplorer('', err => {
-        if(err) {
-            console.log(err);
-        }
-        else {
-            //Do Something
-        }
     });
 };

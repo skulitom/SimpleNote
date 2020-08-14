@@ -4,10 +4,20 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const appHeight = 50;
+global.simpleFile = 'myNote.txt';
 
 electron.ipcMain.on('QUIT_APPLICATION', (event, args) => {
   BrowserWindow.getFocusedWindow().close();
 });
+
+openFile = () => {
+  if(!BrowserWindow.getFocusedWindow()){
+    createWindow();
+  }
+  global.simpleFile = electron.dialog.showOpenDialog(BrowserWindow.getFocusedWindow(), {
+    properties: ['openFile']
+  });
+};
 
 function createWindow () {
   // Create the browser window.
@@ -41,6 +51,7 @@ function createWindow () {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   electron.globalShortcut.register('CommandOrControl+1', createWindow);
+  electron.globalShortcut.register('CommandOrControl+2', openFile);
   
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
