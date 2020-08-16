@@ -10,13 +10,13 @@ electron.ipcMain.on('QUIT_APPLICATION', (event, args) => {
   BrowserWindow.getFocusedWindow().close();
 });
 
-openFile = () => {
-  if(!BrowserWindow.getFocusedWindow()){
+openFile = async () => {
+  if (!BrowserWindow.getFocusedWindow()) {
     createWindow();
   }
-  global.simpleFile = electron.dialog.showOpenDialog(BrowserWindow.getFocusedWindow(), {
+  global.simpleFile = (await electron.dialog.showOpenDialog(BrowserWindow.getFocusedWindow(), {
     properties: ['openFile']
-  });
+  })).filePaths[0];
 };
 
 function createWindow () {
