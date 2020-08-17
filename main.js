@@ -6,6 +6,19 @@ const path = require('path');
 const appHeight = 50;
 global.simpleFile = 'myNote.txt';
 
+const appFolder = path.dirname(process.execPath);
+const updateExe = path.resolve(appFolder, '..', 'Update.exe');
+const exeName = path.basename(process.execPath);
+
+app.setLoginItemSettings({
+  openAtLogin: true,
+  path: updateExe,
+  args: [
+    '--processStart', `"${exeName}"`,
+    '--process-start-args', `"--hidden"`
+  ]
+});
+
 electron.ipcMain.on('QUIT_APPLICATION', (event, args) => {
   BrowserWindow.getFocusedWindow().close();
 });
